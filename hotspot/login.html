@@ -1,0 +1,82 @@
+<html lang="en">
+    <head>
+        <title>Login</title>
+        <meta charset="utf-8">
+        <meta http-equiv="pragma" content="no-cache" />
+        <meta http-equiv="expires" content="-1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="login.css">
+    </head>
+<body>
+    <div class="login-box">
+        $(if chap-id)
+        
+            <form name="sendin" action="$(link-login-only)" method="post">
+                <input type="hidden" name="username" />
+                <input type="hidden" name="password" />
+                <input type="hidden" name="dst" value="$(link-orig)" />
+                <input type="hidden" name="popup" value="true" />
+            </form>
+            
+            <script type="text/javascript" src="md5.js"></script>
+            <script type="text/javascript">
+                <!--
+                    function doLogin() {
+                        document.sendin.username.value = document.login.username.value;
+                        document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+                        document.sendin.submit();
+                        return false;
+                    }
+                //-->
+	        </script>
+        $(endif)
+        
+        <center>
+            <img src="wifi.gif">
+        </center>
+        <h2>LOGIN</h2>
+        
+        <form name="login" action="$(link-login-only)" method="post" background="#A03472"
+        
+        $(if chap-id) onSubmit="return doLogin()" $(endif)>
+            <input type="hidden" name="dst" value="$(link-orig)" />
+            <input type="hidden" name="popup" value="true" />
+            <div class="user-box">
+                <input id="user" autocomplete="on" type="text" name="username" value="$(username)" required="">
+                <label>Username</label>
+            </div>
+            
+            <div class="user-box">
+                <input id="pass" autocomplete="off" type="password" name="password" required="">
+                <label>Password</label>
+            </div>
+            
+            <div align="center">
+                <button id="boton" type="submit" name="submit" value="">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Submit
+                </button>
+            </div>
+            
+            <div class="footer">
+                <p>$(if trial == 'yes')Free trial available, <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">click here</a>.$(endif)<p>
+            </div>
+        </form>
+        
+        <script type="text/javascript">
+            <!--
+                document.login.username.focus();
+            //-->
+        </script>
+        <script type="text/javascript">
+            document.oncontextmenu = function(){
+                return false;
+            }
+        </script>
+    </div>
+</body>
+</html>
