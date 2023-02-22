@@ -1,6 +1,6 @@
 <html lang="en">
     <head>
-        <title>Login</title>
+        <title>Login Hotspot</title>
         <meta charset="utf-8">
         <meta http-equiv="pragma" content="no-cache" />
         <meta http-equiv="expires" content="-1" />
@@ -33,9 +33,9 @@
         $(endif)
         
         <center>
-            <img src="wifi.gif">
+            <img src="wifi.gif"> <!-- Ganti Logo Login Disini -->
         </center>
-        <h2>LOGIN</h2>
+        <h2>LOGIN</h2> <!-- Ganti Nama Login Disini -->
         
         <form name="login" action="$(link-login-only)" method="post" background="#A03472"
         
@@ -62,9 +62,10 @@
                 </button>
             </div>
             
-            <div class="footer">
+            <!-- Bug? -->
+            <!-- <div class="footer">
                 <p>$(if trial == 'yes')Free trial available, <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">click here</a>.$(endif)<p>
-            </div>
+            </div> -->
         </form>
         
         <script type="text/javascript">
